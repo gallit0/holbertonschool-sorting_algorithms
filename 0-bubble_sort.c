@@ -8,7 +8,8 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int i, check = 0, temp = 0, j = 1;
+	size_t i, check = 0;
+	int temp = 0, j = 1;
 
 	for (i = 0; i < size; i++, j++)
 	{
