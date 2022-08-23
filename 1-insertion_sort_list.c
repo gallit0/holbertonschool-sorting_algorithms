@@ -22,10 +22,11 @@ void swap(listint_t *temp, listint_t *p)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *p = *list;
+	listint_t *p = 0;
 
-	if (!p)
+	if (!list)
 		return;
+	p = (*list);
 	for (p = p->next; p; p = p->next)
 	{
 		if (p->n < p->prev->n)
