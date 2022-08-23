@@ -1,35 +1,34 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - instertion algorithm
- * @list: doubly linked list
+ * selection_sort - selection algorithm
+ * @array: array of ints
+ * @size: size of array
  */
 
 void selection_sort(int *array, size_t size)
 {
-	int i = 0, temp2 = 0, x = 0, temp3 = 0;
-	
+	int i = 0, temp1 = 0, x = 0, temp2 = 0;
+
 	if (!array)
 		return;
 	for (i = 0; i < (int) size; i++)
 	{
-		temp3 = i;
+		temp2 = i;
 		for (x = i + 1; x < (int)size; x++)
 		{
-		if ( array[temp3] > array[x])
-		{
-			temp3 = x;
-		}
+			if (array[temp2] > array[x])
+				temp2 = x;
 		}
 		if (array[temp3] < array[i])
 		{
-			temp2 = array[i];
+			temp1 = array[i];
 
-			array[i] = array[temp3];
-			array[temp3] = temp2;
+			array[i] = array[temp2];
+			array[temp2] = temp1;
 			print_array(array, size);
-			temp3 = 0;
 			temp2 = 0;
+			temp1 = 0;
 		}
 	}
 }
