@@ -22,7 +22,7 @@ void swap(listint_t *temp, listint_t *p)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *p = *list, *temp = 0;
+	listint_t *p = *list;
 
 	if (!p)
 		return;
