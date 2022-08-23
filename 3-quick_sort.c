@@ -17,13 +17,12 @@ void quick_sort(int *array, size_t size)
  */
 void quick_sort_recursion(int *array, size_t size, int pivot)
 {
-	int i = 0, j = 0, temp, check = 0;
+	int i = 0, temp, check = 0;
 
 	while (i < pivot)
 	{
 		if (array[i] > array[pivot])
 		{
-			j = i;
 			temp = array[pivot];
 			array[pivot] = array[i];
 			array[i] = temp;
