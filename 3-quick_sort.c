@@ -41,9 +41,10 @@ void quick_sort_recursion(int *array, size_t size, int pivot)
 		}
 		i++;
 	}
-	if (check != 0)
+	if (pivot > 0)
 	{
-		print_array(array, size);
+		if (check)
+			print_array(array, size);
 		quick_sort_recursion(array, size, pivot - 1);
 	}
 }
