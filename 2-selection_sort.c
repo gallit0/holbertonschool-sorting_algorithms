@@ -7,7 +7,7 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int temp = 0, i = 0, temp2 = 0, x = 0, temp3 = 0;
+	int i = 0, temp2 = 0, x = 0, temp3 = 0;
 	
 	if (!array)
 		return;
@@ -28,11 +28,8 @@ void selection_sort(int *array, size_t size)
 			array[i] = array[temp3];
 			array[temp3] = temp2;
 			print_array(array, size);
-			//selection_sort(array, size);
-			//return;
 			temp3 = 0;
 			temp2 = 0;
-			i++;
 		}
 	}
 }
