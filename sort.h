@@ -23,5 +23,5 @@ void insertion_sort_list(listint_t **list);
 void swap(listint_t *temp, listint_t *p);
 void quick_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
-void quick_sort_recursion(int *array, size_t size, int pivot, int full_size, int *full_array);
+void quick_sort_r(int *array, size_t size, int full_size, int *full_array);
 #endif
