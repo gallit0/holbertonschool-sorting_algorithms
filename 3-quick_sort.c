@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <unistd.h>
 
 /**
  * quick_sort - quickest way to sort alogrithm
@@ -55,27 +56,30 @@ void quick_sort_recursion(int *array, size_t size, int pivot, int full_size, int
 				array[pivot] = temp;
 				has_swap = 1;
 				pivot = i;
-				print_array(full_array, full_size);
 				break;
 			}	
 		}
 		i++;
 	}
-	if (has_swap > 0 && (int)size > 0 && pivot < (int)size);
+	if (has_swap)
+	print_array(full_array, full_size);
+	if ((int)size > 0 && pivot < (int)size)
 	{
+		sleep(0.2);
 		printf("Distribuir - %d\n", has_swap);
 
-		if (has_swap == 0)
-			return;
-		if (pivot > 0)
+		if (pivot > 1 && (pivot - 1) < ((int)size))
 		{
 			puts("PRIMERO");
-			quick_sort_recursion(array, size, pivot - 1, full_size, full_array);
+			quick_sort_recursion(array, (int)size - 1, pivot - 1, full_size, full_array);
 		}
-		if (((int)size - 2) > 0)
+
+		printf("SEGUNDO - %d\n", i);
+		if ((int)size - (i + 1) > 0 && pivot < ((int)size - 2))
 		{
-			puts("SEGUNDO");
-			quick_sort_recursion(&array[i + 1], size - (i + 1), (int)size - 2, full_size, full_array);
+			int new_size = 0;
+			new_size = (int)size - (pivot + 2);
+			quick_sort_recursion(&array[i + 1], size - (i + 1), new_size, full_size, full_array);
 		}
 	}
 }
